@@ -8,12 +8,12 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/java/features", 
-		glue = "stepDefinitions", 
+		features = "src/test/java/facebook/features", 
+		glue = "facebook.stepDefinitions", 
 		monochrome = true, 
 		plugin = { "pretty", "html:target/site/cucumber-report-default", "json:target/site/cucumber.json" }, 
 		snippets = SnippetType.CAMELCASE, 
 		tags = {"@parameter"})
-public class TestRunner {
+public class FacebookTestRunner {
 
 }
