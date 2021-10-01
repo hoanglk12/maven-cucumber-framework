@@ -19,4 +19,8 @@ public class PageGeneratorManager {
 		return new MyDashboardPageObject(driver);
 	}
 
+	public static CommonPageObject getCommonPage(WebDriver driver) {
+		return new CommonPageObject(driver);
+	}
+
 }

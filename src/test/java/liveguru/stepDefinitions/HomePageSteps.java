@@ -3,7 +3,6 @@ package liveguru.stepDefinitions;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumberOptions.Hooks;
 import pageObjects.liveGuru.HomePageObject;
@@ -20,10 +19,6 @@ public class HomePageSteps {
 	public void logoPageIsDisplayed()  {
 		Assert.assertTrue(homePage.isLogoPageDisplayed());
 	}
-
-	@Given("^Open My Account at footer link$")
-	public void openMyAccountAtFooterLink()  {
-	   homePage.clickToMyAccountLinkAtFooter();
-	}
+	
 
 }

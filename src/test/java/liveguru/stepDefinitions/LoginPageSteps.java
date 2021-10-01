@@ -39,7 +39,10 @@ public class LoginPageSteps {
 	public void errorMessageAreDisplayedWithContent(String errorMessage){
 		Assert.assertEquals(loginPage.getEmptyEmailErrorMessage(), errorMessage);
 		Assert.assertEquals(loginPage.getEmptyPasswordErrorMessage(), errorMessage);
-		
 	}
-
+	@Then("^Error message below header page is displayed with content \"([^\"]*)\"$")
+	public void errorMessageBelowHeaderPageIsDisplayedWithContent(String expectedMessage){
+		Assert.assertEquals(loginPage.getIncorrectEmailPasswordErrorMessage(), expectedMessage);
+	}
+	
 }

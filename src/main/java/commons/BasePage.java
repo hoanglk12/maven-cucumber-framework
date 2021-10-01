@@ -606,7 +606,7 @@ public abstract class BasePage {
 		Collections.reverse(sortedList);
 		return sortedList.equals(arrayList);
 	}
-
+	
 	private Alert alert;
 	private WebDriverWait explicitWait;
 	private long timeOut = 30;
