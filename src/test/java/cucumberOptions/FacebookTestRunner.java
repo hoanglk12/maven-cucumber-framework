@@ -11,7 +11,7 @@ import cucumber.api.junit.Cucumber;
 		features = "src/test/java/facebook/features", 
 		glue = "facebook.stepDefinitions", 
 		monochrome = true, 
-		plugin = { "pretty", "html:target/site/cucumber-report-default", "json:target/site/cucumber.json" }, 
+		plugin = { "pretty", "html:target/site/cucumber-report-default", "json:target/site/cucumber_facebook.json" }, 
 		snippets = SnippetType.CAMELCASE, 
 		tags = {"@parameter"})
 public class FacebookTestRunner {

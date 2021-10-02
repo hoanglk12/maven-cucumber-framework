@@ -20,5 +20,8 @@ public class HomePageObject extends BasePage {
 		waitForElementClickable(driver, HomePageUI.MYACCOUNT_LINK_FOOTER);
 		clickToElement(driver, HomePageUI.MYACCOUNT_LINK_FOOTER);
 	}
+	public String getHomePageUrl() {
+		return getCurrentPageUrl(driver);
+	}
 
 }

@@ -54,5 +54,9 @@ public class LoginPageObject extends BasePage{
 		waitForElementVisible(driver, LoginPageUI.INCORRECT_EMAIL_PASSWORD_ERROR_MSG);
 		return getTextElement(driver, LoginPageUI.INCORRECT_EMAIL_PASSWORD_ERROR_MSG);
 	}
+
+	public void openHomePage(String url) {
+		openPageUrl(driver, url);
+	}
 	
 }

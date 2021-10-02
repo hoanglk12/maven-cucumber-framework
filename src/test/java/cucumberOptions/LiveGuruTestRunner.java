@@ -11,7 +11,7 @@ import cucumber.api.junit.Cucumber;
 		features = "src/test/java/liveguru/features", 
 		glue = "liveguru.stepDefinitions", 
 		monochrome = true, 
-		plugin = { "pretty", "html:target/site/cucumber-report-default", "json:target/site/cucumber.json" }, 
+		plugin = { "pretty", "html:target/site/cucumber-report-default", "json:target/site/cucumber_liveGuru.json" }, 
 		snippets = SnippetType.CAMELCASE, 
 		tags = {"@register_and_login"})
 public class LiveGuruTestRunner {

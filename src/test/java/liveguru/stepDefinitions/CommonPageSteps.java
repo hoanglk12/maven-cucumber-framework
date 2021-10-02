@@ -51,5 +51,6 @@ public class CommonPageSteps {
 		Assert.assertEquals(commonPage.getErrorMessageByAttributeId(driver, "email", "required-entry-email"), expectedMessage);
 		Assert.assertEquals(commonPage.getErrorMessageByAttributeId(driver, "pass", "required-entry-pass"), expectedMessage);
 	}
+	
 
 }

@@ -1,8 +1,12 @@
 package liveguru.stepDefinitions;
 
+import java.util.List;
+import java.util.Map;
+
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
+import cucumber.api.DataTable;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -14,12 +18,22 @@ public class LoginPageSteps {
 	WebDriver driver;
 	LoginPageObject loginPage;
 	String emailAddressData, passwordData;
+	TestContext testContext;
 	
-	public LoginPageSteps() {
+	public LoginPageSteps(TestContext testContext) {
 		this.driver = Hooks.openAndQuitBrowser();
+		this.testContext = testContext;
 		loginPage = PageGeneratorManager.getLoginPage(driver);
 	}
 	
+			
+	
+	@Then("^New Home Page Url is \"([^\"]*)\"$")
+	public void newHomePageUrlIs(String homePageUrl, DataTable homePageTable) {
+		String newHomePageUrl = loginPage.getCurrentPageUrl(driver);
+		List<Map<String, String>> homePage = homePageTable.asMaps(String.class, String.class);
+		Assert.assertEquals(newHomePageUrl, homePage.get(0).get("homePageUrl"));
+	}
 	@When("^Input \"([^\"]*)\" at Email Address textbox$")
 	public void inputAtEmailAddressTextbox(String emailAddress){
 	  loginPage.enterToEmailAddressTextbox(emailAddress);
@@ -44,5 +58,11 @@ public class LoginPageSteps {
 	public void errorMessageBelowHeaderPageIsDisplayedWithContent(String expectedMessage){
 		Assert.assertEquals(loginPage.getIncorrectEmailPasswordErrorMessage(), expectedMessage);
 	}
+	@And("^Open Home Page at My Account$")
+    public void openHomePageAtMyAccount(){
+		//loginPage.openHomePage(testContext.getDataContext().getContext(Context.LOGIN_URL));
+		//System.out.println("Home Page url : " + (String) testContext.dataContext.getContext(Context.LOGIN_URL));
+		loginPage.openPageUrl(driver, testContext.dataContext.getContext(Context.LOGIN_URL));
+    }
 	
 }
