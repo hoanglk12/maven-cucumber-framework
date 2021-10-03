@@ -7,11 +7,13 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumberOptions.Hooks;
 import pageObjects.liveGuru.HomePageObject;
+import pageObjects.liveGuru.LoginPageObject;
 import pageObjects.liveGuru.PageGeneratorManager;
 
 public class HomePageSteps {
 	WebDriver driver;
 	HomePageObject homePage;
+	LoginPageObject loginPage;
 	TestContext testContext;
 
 	public HomePageSteps(TestContext testContext) {
@@ -27,10 +29,8 @@ public class HomePageSteps {
 
 	@When("^I get new login Url$")
 	public void iGetNewLoginUrl() {
-		//String newHomePageUrl = homePage.getHomePageUrl();
-		String newHomePageUrl = "http://live.techpanda.org/";
-		testContext.dataContext.setContext(Context.LOGIN_URL, newHomePageUrl);
-	
+		testContext.getDataContext().setContext(Context.LOGIN_URL, homePage.getHomePageUrl());
+		System.out.println("Home Page URL: " + testContext.getDataContext().getContext(Context.LOGIN_URL));
 	}
 
 }

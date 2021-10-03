@@ -11,13 +11,14 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumberOptions.Hooks;
+import pageObjects.liveGuru.HomePageObject;
 import pageObjects.liveGuru.LoginPageObject;
 import pageObjects.liveGuru.PageGeneratorManager;
 
 public class LoginPageSteps {
 	WebDriver driver;
 	LoginPageObject loginPage;
-	String emailAddressData, passwordData;
+	HomePageObject homePage;
 	TestContext testContext;
 	
 	public LoginPageSteps(TestContext testContext) {
@@ -25,9 +26,7 @@ public class LoginPageSteps {
 		this.testContext = testContext;
 		loginPage = PageGeneratorManager.getLoginPage(driver);
 	}
-	
-			
-	
+				
 	@Then("^New Home Page Url is \"([^\"]*)\"$")
 	public void newHomePageUrlIs(String homePageUrl, DataTable homePageTable) {
 		String newHomePageUrl = loginPage.getCurrentPageUrl(driver);
@@ -60,9 +59,9 @@ public class LoginPageSteps {
 	}
 	@And("^Open Home Page at My Account$")
     public void openHomePageAtMyAccount(){
-		//loginPage.openHomePage(testContext.getDataContext().getContext(Context.LOGIN_URL));
-		//System.out.println("Home Page url : " + (String) testContext.dataContext.getContext(Context.LOGIN_URL));
-		loginPage.openPageUrl(driver, testContext.dataContext.getContext(Context.LOGIN_URL));
+		String newHomePageUrl  = testContext.getDataContext().getContext(Context.LOGIN_URL);
+		System.out.println("newHomePageUrl : " + newHomePageUrl);
+		//loginPage.openPageUrl(driver, testContext.getDataContext().getContext(Context.LOGIN_URL));
     }
 	
 }

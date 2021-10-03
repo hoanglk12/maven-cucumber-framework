@@ -107,7 +107,8 @@
 					<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
 					<testFailureIgnore>true</testFailureIgnore>
 					<includes>
-						<include>**/*TestRunner.java</include> <!-- must define TestRunner.java to run parallel -->
+						<!--  <include>**/*TestRunner.java</include>--> <!-- must define TestRunner.java to run parallel -->
+						<include>**/*LiveGuruTestRunner.java</include>
 					</includes>
 				</configuration>
 			</plugin>
