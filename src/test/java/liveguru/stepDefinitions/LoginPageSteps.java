@@ -59,7 +59,7 @@ public class LoginPageSteps {
 	}
 	@And("^Open Home Page at My Account$")
     public void openHomePageAtMyAccount(){
-		String newHomePageUrl  = testContext.getDataContext().getContext(Context.LOGIN_URL);
+		String newHomePageUrl  = testContext.dataContext.getContext(Context.LOGIN_URL);
 		System.out.println("newHomePageUrl : " + newHomePageUrl);
 		//loginPage.openPageUrl(driver, testContext.getDataContext().getContext(Context.LOGIN_URL));
     }
