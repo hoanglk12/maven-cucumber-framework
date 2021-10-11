@@ -25,6 +25,7 @@ public class LoginPageSteps {
 		this.driver = Hooks.openAndQuitBrowser();
 		this.testContext = testContext;
 		loginPage = PageGeneratorManager.getLoginPage(driver);
+		
 	}
 				
 	@Then("^New Home Page Url is \"([^\"]*)\"$")
@@ -59,9 +60,10 @@ public class LoginPageSteps {
 	}
 	@And("^Open Home Page at My Account$")
     public void openHomePageAtMyAccount(){
-		String newHomePageUrl  = testContext.dataContext.getContext(Context.LOGIN_URL);
-		System.out.println("newHomePageUrl : " + newHomePageUrl);
-		//loginPage.openPageUrl(driver, testContext.getDataContext().getContext(Context.LOGIN_URL));
+		String newPageUrl =  (String) testContext.getDataContext().getContext(Context.LOGIN_URL);
+		//String newHomPageUrl = (String) homePage;
+		System.out.println("newPageUrl : " + newPageUrl);
+		//loginPage.openPageUrl(driver, );
     }
 	
 }

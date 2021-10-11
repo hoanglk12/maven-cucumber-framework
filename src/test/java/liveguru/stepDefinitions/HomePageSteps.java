@@ -30,7 +30,7 @@ public class HomePageSteps {
 	@When("^I get new login Url$")
 	public void iGetNewLoginUrl() {
 		testContext.getDataContext().setContext(Context.LOGIN_URL, homePage.getHomePageUrl());
-		System.out.println("Home Page URL: " + testContext.getDataContext().getContext(Context.LOGIN_URL));
+		//String newHomePageUrl = (String) testContext.getDataContext().getContext(Context.LOGIN_URL);
 	}
 
 }

@@ -11,7 +11,7 @@ public class DataContext {
 	public void setContext(Context key, Object value) {
 		dataContext.put(key.toString(), value);
 	}
-	public String getContext(Context key) {
-		return (String) dataContext.get(key.toString());
+	public Object getContext(Context key) {
+		return dataContext.get(key.toString());
 	}
 }
