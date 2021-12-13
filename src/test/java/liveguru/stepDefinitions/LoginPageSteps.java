@@ -20,12 +20,12 @@ public class LoginPageSteps {
 	LoginPageObject loginPage;
 	HomePageObject homePage;
 	TestContext testContext;
-	
+	String newPageUrl;
 	public LoginPageSteps(TestContext testContext) {
 		this.driver = Hooks.openAndQuitBrowser();
 		this.testContext = testContext;
 		loginPage = PageGeneratorManager.getLoginPage(driver);
-		
+		newPageUrl =  (String) testContext.getDataContext().getContext(Context.LOGIN_URL);
 	}
 				
 	@Then("^New Home Page Url is \"([^\"]*)\"$")
@@ -60,7 +60,7 @@ public class LoginPageSteps {
 	}
 	@And("^Open Home Page at My Account$")
     public void openHomePageAtMyAccount(){
-		String newPageUrl =  (String) testContext.getDataContext().getContext(Context.LOGIN_URL);
+		
 		//String newHomPageUrl = (String) homePage;
 		System.out.println("newPageUrl : " + newPageUrl);
 		//loginPage.openPageUrl(driver, );
